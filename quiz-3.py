@@ -57,7 +57,7 @@ def fetch_token(token_id):
 def dump_token_data(token_name, token_data):
     date = datetime.now().strftime("%d_%m_%Y %H-%M-%S")
 
-    with open(f'{token_name}-{date}.txt', 'w') as outfile:
+    with open(f'{token_name}-{date}.json', 'w') as outfile:
         json.dump(token_data, outfile, indent=4)
 
 
