@@ -88,7 +88,7 @@ while state_code == 0:
         exit () -> stops and exits out of the program
         
         find (string: name) -> finds token with similar name
-        view (string: token_id) -> gets and displays info for specified token
+        price (string: token_id) -> gets and displays price for specified token
         dump (string: token_id) -> gets and dump json info for specified token
         save (string: token_id) -> saves given tokens current data to database
         """)
@@ -100,8 +100,8 @@ while state_code == 0:
         token_id = args[1]
 
         dump_token_data(token_id, fetch_token(token_id))
-    elif command == "view":
-        print(fetch_token(args[1]))
+    elif command == "price":
+        print(fetch_token(args[1])["market_data"]["current_price"]['usd'])
     elif command == "save":
         token_id = args[1]
 
